@@ -9,7 +9,7 @@
  */
 
 // Namespace
-namespace Yireo\Actions;
+namespace Yireo\Traits\Actions;
 
 // No direct access
 defined('_JEXEC') or die('Restricted access');

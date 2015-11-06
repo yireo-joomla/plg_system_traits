@@ -9,7 +9,7 @@
  */
 
 // Namespace
-namespace Yireo\Checks;
+namespace Yireo\Traits\Checks;
 
 // No direct access
 defined('_JEXEC') or die('Restricted access');
@@ -17,7 +17,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Trait Ajax
  *
- * @package Yireo\Checks
+ * @package Yireo\Traits\Checks
  */
 trait Ajax
 {

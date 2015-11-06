@@ -27,9 +27,9 @@ class PlgSystemTraits extends PlgSystemTraitsAbstract
 	/**
 	 * Include traits
 	 */
-    use \Yireo\Actions\Tag;
-    use \Yireo\Checks\Ajax;
-    use \Yireo\Checks\Frontend;
+    use \Yireo\Traits\Actions\Tag;
+    use \Yireo\Traits\Checks\Ajax;
+    use \Yireo\Traits\Checks\Frontend;
 
 	/**
 	 * Catch the event onAfterInitialise
@@ -38,7 +38,7 @@ class PlgSystemTraits extends PlgSystemTraitsAbstract
 	 */
 	public function onAfterRender()
 	{
-		if ($this->isAjaxRequest() && $this->isHtmlFrontend() == false)
+		if ($this->isAjaxRequest() || $this->isHtmlFrontend() == false)
 		{
 			return false;
 		}
@@ -49,7 +49,7 @@ class PlgSystemTraits extends PlgSystemTraitsAbstract
 			foreach ($tags as $tag)
 			{
 				// var_dump($tag);
-				$tagHtml = '<h1>Tag: ' . var_export($tag['arguments'], true) . ' --></h1>';
+				$tagHtml = '<strong>Traits Plugin: ' . var_export($tag['arguments'], true) . '</strong>';
 
 				$this->replaceBodyTags($tag['original'], $tagHtml);
 			}
